@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B9412FBF1BA666D5005239AC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9412FBE1BA666D5005239AC /* DetailViewController.swift */; };
+		B9412FC11BA683C1005239AC /* pointer_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = B9412FC01BA683C1005239AC /* pointer_normal.png */; };
+		B9412FC31BA683C7005239AC /* pointer_touch.png in Resources */ = {isa = PBXBuildFile; fileRef = B9412FC21BA683C7005239AC /* pointer_touch.png */; };
 		B95C115C1B8EDF2A002C51CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95C115B1B8EDF2A002C51CA /* AppDelegate.swift */; };
 		B95C115F1B8EDF2A002C51CA /* iOS_example.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B95C115D1B8EDF2A002C51CA /* iOS_example.xcdatamodeld */; };
 		B95C11611B8EDF2A002C51CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95C11601B8EDF2A002C51CA /* ViewController.swift */; };
@@ -27,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B9412FBE1BA666D5005239AC /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B9412FC01BA683C1005239AC /* pointer_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pointer_normal.png; sourceTree = "<group>"; };
+		B9412FC21BA683C7005239AC /* pointer_touch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pointer_touch.png; sourceTree = "<group>"; };
 		B95C11561B8EDF2A002C51CA /* iOS-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B95C115A1B8EDF2A002C51CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B95C115B1B8EDF2A002C51CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,7 +87,10 @@
 			children = (
 				B95C115B1B8EDF2A002C51CA /* AppDelegate.swift */,
 				B95C11601B8EDF2A002C51CA /* ViewController.swift */,
+				B9412FBE1BA666D5005239AC /* DetailViewController.swift */,
 				B95C11621B8EDF2A002C51CA /* Main.storyboard */,
+				B9412FC01BA683C1005239AC /* pointer_normal.png */,
+				B9412FC21BA683C7005239AC /* pointer_touch.png */,
 				B95C11651B8EDF2A002C51CA /* Images.xcassets */,
 				B95C11671B8EDF2A002C51CA /* LaunchScreen.xib */,
 				B95C115D1B8EDF2A002C51CA /* iOS_example.xcdatamodeld */,
@@ -197,7 +206,9 @@
 			files = (
 				B95C11641B8EDF2A002C51CA /* Main.storyboard in Resources */,
 				B95C11691B8EDF2A002C51CA /* LaunchScreen.xib in Resources */,
+				B9412FC11BA683C1005239AC /* pointer_normal.png in Resources */,
 				B95C11661B8EDF2A002C51CA /* Images.xcassets in Resources */,
+				B9412FC31BA683C7005239AC /* pointer_touch.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +229,7 @@
 				B95C11611B8EDF2A002C51CA /* ViewController.swift in Sources */,
 				B95C115F1B8EDF2A002C51CA /* iOS_example.xcdatamodeld in Sources */,
 				B95C115C1B8EDF2A002C51CA /* AppDelegate.swift in Sources */,
+				B9412FBF1BA666D5005239AC /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +425,7 @@
 				B95C117A1B8EDF2A002C51CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B95C117B1B8EDF2A002C51CA /* Build configuration list for PBXNativeTarget "iOS-exampleTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +434,7 @@
 				B95C117D1B8EDF2A002C51CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
