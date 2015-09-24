@@ -24,7 +24,7 @@ class DetailViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = leftItem
         
         // 建立 webview 畫面大小
-        var webV: UIWebView = UIWebView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height-20))
+        let webV: UIWebView = UIWebView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height-20))
         if let url = NSURL(string: "http://coderanch.net") {
             let request = NSURLRequest(URL: url)
             webV.loadRequest(request)
