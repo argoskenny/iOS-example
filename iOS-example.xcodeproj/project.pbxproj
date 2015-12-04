@@ -14,6 +14,7 @@
 		B95C11661B8EDF2A002C51CA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B95C11651B8EDF2A002C51CA /* Images.xcassets */; };
 		B95C11691B8EDF2A002C51CA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95C11671B8EDF2A002C51CA /* LaunchScreen.xib */; };
 		B95C11751B8EDF2A002C51CA /* iOS_exampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95C11741B8EDF2A002C51CA /* iOS_exampleTests.swift */; };
+		B9E9C54D1C113048007510EB /* city.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B9E9C54C1C113048007510EB /* city.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		B95C116E1B8EDF2A002C51CA /* iOS-exampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-exampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B95C11731B8EDF2A002C51CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B95C11741B8EDF2A002C51CA /* iOS_exampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_exampleTests.swift; sourceTree = "<group>"; };
+		B9E9C54C1C113048007510EB /* city.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = city.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,8 +83,9 @@
 			children = (
 				B95C115B1B8EDF2A002C51CA /* AppDelegate.swift */,
 				B95C11601B8EDF2A002C51CA /* ViewController.swift */,
-				B95C11621B8EDF2A002C51CA /* Main.storyboard */,
+				B9E9C54C1C113048007510EB /* city.jpg */,
 				B95C11651B8EDF2A002C51CA /* Images.xcassets */,
+				B95C11621B8EDF2A002C51CA /* Main.storyboard */,
 				B95C11671B8EDF2A002C51CA /* LaunchScreen.xib */,
 				B95C115D1B8EDF2A002C51CA /* iOS_example.xcdatamodeld */,
 				B95C11591B8EDF2A002C51CA /* Supporting Files */,
@@ -195,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9E9C54D1C113048007510EB /* city.jpg in Resources */,
 				B95C11641B8EDF2A002C51CA /* Main.storyboard in Resources */,
 				B95C11691B8EDF2A002C51CA /* LaunchScreen.xib in Resources */,
 				B95C11661B8EDF2A002C51CA /* Images.xcassets in Resources */,

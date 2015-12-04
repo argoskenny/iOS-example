@@ -18,9 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         // 上方狀態列文字顏色及背景色
-        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
         let view = UIView(frame:CGRect(x: 0.0, y: 0.0, width: UIScreen.mainScreen().bounds.size.width, height: 20.0))
-        view.backgroundColor = UIColor.redColor()
+        view.backgroundColor = UIColor.clearColor()
         self.window!.rootViewController!.view.addSubview(view)
         
         return true
