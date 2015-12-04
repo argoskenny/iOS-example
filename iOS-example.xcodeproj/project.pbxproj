@@ -14,6 +14,7 @@
 		B95C11661B8EDF2A002C51CA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B95C11651B8EDF2A002C51CA /* Images.xcassets */; };
 		B95C11691B8EDF2A002C51CA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95C11671B8EDF2A002C51CA /* LaunchScreen.xib */; };
 		B95C11751B8EDF2A002C51CA /* iOS_exampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95C11741B8EDF2A002C51CA /* iOS_exampleTests.swift */; };
+		B9F53BC01BB7FE5200601272 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F53BBF1BB7FE5200601272 /* DetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		B95C116E1B8EDF2A002C51CA /* iOS-exampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-exampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B95C11731B8EDF2A002C51CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B95C11741B8EDF2A002C51CA /* iOS_exampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_exampleTests.swift; sourceTree = "<group>"; };
+		B9F53BBF1BB7FE5200601272 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				B95C115B1B8EDF2A002C51CA /* AppDelegate.swift */,
 				B95C11601B8EDF2A002C51CA /* ViewController.swift */,
+				B9F53BBF1BB7FE5200601272 /* DetailViewController.swift */,
 				B95C11621B8EDF2A002C51CA /* Main.storyboard */,
 				B95C11651B8EDF2A002C51CA /* Images.xcassets */,
 				B95C11671B8EDF2A002C51CA /* LaunchScreen.xib */,
@@ -218,6 +221,7 @@
 				B95C11611B8EDF2A002C51CA /* ViewController.swift in Sources */,
 				B95C115F1B8EDF2A002C51CA /* iOS_example.xcdatamodeld in Sources */,
 				B95C115C1B8EDF2A002C51CA /* AppDelegate.swift in Sources */,
+				B9F53BC01BB7FE5200601272 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
