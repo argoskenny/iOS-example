@@ -6,6 +6,7 @@ Branch name - Example title
 * CustomBackButton - Custom Back Button
 * animationSubview - Animation Example
 * PhotoBrowser - Photo Browser Example
+* CustomTableViewCell - Custom TableViewCell Example
 
 use "git branch -a" check out all available examples
 
