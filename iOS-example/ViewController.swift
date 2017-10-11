@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let listData: Array<String> = ["周董生了生了生了一個怪獸噁心死了","靠北幹你娘喇機幹幹比","我糙你媽的機掰查小幹你吃使魂但"]
+    let listData: Array<String> = ["天天都是星期天","你知道嗎","哈哈哈"]
     
     var currentItem: Int = 0
     
@@ -31,19 +31,19 @@ class ViewController: UIViewController {
         
         let extraTitle: UILabel = UILabel(frame: CGRect(x: 14.0, y: 23.0, width: 50, height: 20))
         extraTitle.text = "快訊"
-        extraTitle.font = UIFont.systemFontOfSize(19)
-        extraTitle.textColor = UIColor.whiteColor()
+        extraTitle.font = UIFont.systemFont(ofSize: 19.0)
+        extraTitle.textColor = UIColor.white
         
         extraButton = UIButton(frame: CGRect(x: extratitle_x, y: 8, width: extratitle_width, height: 50))
-        extraButton.addTarget(self, action: "extraPush:", forControlEvents: UIControlEvents.TouchUpInside)
+        extraButton.addTarget(self, action: #selector(extraPush), for: UIControlEvents.touchUpInside)
         
         extraTouch = UILabel(frame: CGRect(x: extratitle_x, y: 8, width: extratitle_width, height: 50))
-        extraTouch.textColor = UIColor.blackColor()
-        extraTouch.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        extraTouch.textColor = UIColor.black
+        extraTouch.lineBreakMode = NSLineBreakMode.byWordWrapping
         extraTouch.numberOfLines = 0
         
         extraView = UIView(frame: CGRect(x: 0.0, y: 50.0, width: self.view.frame.width, height: extraHeight))
-        extraView.backgroundColor = UIColor.lightGrayColor()
+        extraView.backgroundColor = UIColor.lightGray
         extraView.addSubview(extraTitle)
         extraView.addSubview(extraTouch)
         extraView.addSubview(extraButton)
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
     func extraAnimateSlide(){
         let listTotal = self.listData.count
         let lastItemIndex = listTotal - 1
-        currentItem++
+        currentItem += 1
         if currentItem > lastItemIndex {
             currentItem = 0
         }
@@ -67,17 +67,17 @@ class ViewController: UIViewController {
         self.extraTouch.text = listData[currentItem]
         self.extraTouch.frame = CGRect(x: extratitle_x, y: 8, width: extratitle_width, height: 50)
         self.extraTouch.alpha = 1.0
-        UIView.animateWithDuration(1.0, delay: 3.0, options: [], animations: { () -> Void in
+        UIView.animate(withDuration: 1.0, delay: 3.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: [], animations: {
             self.extraTouch.frame = CGRect(x: self.extratitle_x, y: 20, width: self.extratitle_width, height: 50)
             self.extraTouch.alpha = 0.0
-            }, completion: { (finished: Bool) -> Void in
-                self.extraAnimateSlide()
-        })
+        }) { (complete: Bool) in
+            self.extraAnimateSlide()
+        }
     }
     
-    func extraPush(sender: UILabel){
+    @objc func extraPush(sender: UILabel){
         print("go")
-        let dv = self.storyboard?.instantiateViewControllerWithIdentifier("DetailViewController") as? DetailViewController
+        let dv = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
         dv?.detailTitle = listData[currentItem]
         self.navigationController?.pushViewController(dv!, animated: true)
     }

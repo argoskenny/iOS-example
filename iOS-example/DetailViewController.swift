@@ -15,15 +15,15 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let detailLabel: UILabel = UILabel(frame: CGRect(x: 0.0, y: 80, width: self.view.frame.width, height: 50.0))
-        detailLabel.backgroundColor = UIColor.blackColor()
+        detailLabel.backgroundColor = UIColor.black
         detailLabel.text = detailTitle
-        detailLabel.textColor = UIColor.whiteColor()
+        detailLabel.textColor = UIColor.white
         
         self.view.addSubview(detailLabel)
     }
     
     func back(sender: UIButton){
-        self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.popViewController(animated: true)
     }
 
     override func didReceiveMemoryWarning() {
