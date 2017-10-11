@@ -25,7 +25,7 @@ class CustomTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         cellImageView = UIImageView(frame: CGRect(x: 10.0, y: 7.0, width: 30, height: 30))
-        cellImageView.contentMode = UIViewContentMode.ScaleAspectFill
+        cellImageView.contentMode = UIViewContentMode.scaleAspectFill
         cellImageView.clipsToBounds = true
         
         cellTitle = UILabel(frame: CGRect(x: 50.0, y: 7.0, width: 100.0, height: 30))
@@ -34,7 +34,7 @@ class CustomTableViewCell: UITableViewCell {
         self.contentView.addSubview(cellTitle)
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
