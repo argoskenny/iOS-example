@@ -21,22 +21,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.lightGrayColor()
+        self.view.backgroundColor = UIColor.lightGray
         
         // 建立按鈕
-        let position_x = UIScreen.mainScreen().bounds.width / 2 - 50
-        let position_y = UIScreen.mainScreen().bounds.height / 2
-        downModal.setTitle("下方選單", forState: UIControlState.Normal)
-        downModal.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        downModal.frame = CGRectMake(position_x, position_y + 25, 100, 40)
-        downModal.backgroundColor = UIColor.redColor()
-        downModal.addTarget(self, action: "down:", forControlEvents: .TouchUpInside)
+        let position_x = UIScreen.main.bounds.width / 2 - 50
+        let position_y = UIScreen.main.bounds.height / 2
+        downModal.setTitle("下方選單", for: UIControlState.normal)
+        downModal.setTitleColor(UIColor.white, for: UIControlState.normal)
+        downModal.frame = CGRect(x: position_x, y: position_y + 25.0, width: 100.0, height: 40.0)
+        downModal.backgroundColor = UIColor.red
+        downModal.addTarget(self, action: #selector(down), for: UIControlEvents.touchUpInside)
         
-        upModal.setTitle("上方選單", forState: UIControlState.Normal)
-        upModal.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        upModal.frame = CGRectMake(position_x, position_y - 25, 100, 40)
-        upModal.backgroundColor = UIColor.blueColor()
-        upModal.addTarget(self, action: "up:", forControlEvents: .TouchUpInside)
+        upModal.setTitle("上方選單", for: UIControlState.normal)
+        upModal.setTitleColor(UIColor.white, for: UIControlState.normal)
+        upModal.frame = CGRect(x: position_x, y: position_y - 25.0, width: 100.0, height: 40.0)
+        upModal.backgroundColor = UIColor.red
+        upModal.addTarget(self, action: #selector(up), for: UIControlEvents.touchUpInside)
         
         self.view.addSubview(downModal)
         self.view.addSubview(upModal)
@@ -55,22 +55,22 @@ class ViewController: UIViewController {
         let callbackText: UILabel = UILabel(frame: CGRect(x: self.view.frame.width / 2 - 50, y: 7.0, width: 100.0, height: 20.0))
         callbackText.text = "Success!!"
         callbackView = UIView(frame: CGRect(x: 0.0, y: 70.0, width: self.view.frame.width, height: 30.0))
-        callbackView.backgroundColor = UIColor.grayColor()
+        callbackView.backgroundColor = UIColor.gray
         callbackView.addSubview(callbackText)
     }
     
-    func down(sender: UIButton!){
-        UIView.animateWithDuration(0.4, delay: 0.0, options: [], animations: { () -> Void in
-            self.downMenu.frame = CGRectMake(0.0, self.view.frame.height - self.menuHeight, self.view.frame.width, self.menuHeight)
-            }, completion: nil)
+    @objc func down(sender: UIButton!){
+        UIView.animate(withDuration: 0.4) {
+            self.downMenu.frame = CGRect(x: 0.0, y: self.view.frame.height - self.menuHeight, width: self.view.frame.width, height: self.menuHeight)
+        }
     }
     
-    func up(sender: UIButton!){
-        UIView.animateWithDuration(0.4, delay: 0.0, options: [], animations: { () -> Void in
-            self.upMenu.frame = CGRectMake(0.0, 0.0, self.view.frame.width, self.menuHeight)
-            }, completion: { (finished: Bool) -> Void in
+    @objc func up(sender: UIButton!){
+        UIView.animate(withDuration: 0.4, animations: {
+            self.upMenu.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.width, height: self.menuHeight)
+        }) { (complete: Bool) in
             self.view.addSubview(self.callbackView)
-        })
+        }
     }
 
     override func didReceiveMemoryWarning() {
