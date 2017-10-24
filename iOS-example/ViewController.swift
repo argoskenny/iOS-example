@@ -13,14 +13,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // 建立 webview 畫面大小
-        let webV: UIWebView = UIWebView(frame: CGRectMake(0, 20, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height-20))
+        let webView: UIWebView = UIWebView(frame: CGRect(x: 0.0, y: 20.0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 20))
         
         // 設定要顯示的網頁連結
-        if let url = NSURL(string: "http://coderanch.net/67") {
-            let request = NSURLRequest(URL: url)
-            webV.loadRequest(request)
+        if let url = URL(string: "http://happy-sisyphus.com/") {
+            webView.loadRequest(URLRequest(url: url))
         }
-        self.view.addSubview(webV)
+        self.view.addSubview(webView)
 
     }
 
