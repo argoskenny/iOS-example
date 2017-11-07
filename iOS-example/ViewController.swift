@@ -15,8 +15,8 @@ class ViewController: UIViewController, UIScrollViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.translucent = true
-        self.navigationController?.toolbar.translucent = true
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.toolbar.isTranslucent = true
         initImageInstance()
         initScrollViewContainer()
         setupGestureRecognizer()
@@ -34,9 +34,9 @@ class ViewController: UIViewController, UIScrollViewDelegate{
     // 產生 Scroll View
     func initScrollViewContainer(){
         self.scrollView = UIScrollView(frame: CGRect(x: 0.0, y: 0.0, width: self.view.bounds.width, height: self.view.bounds.height))
-        self.scrollView.backgroundColor = UIColor.blackColor()
+        self.scrollView.backgroundColor = UIColor.black
         self.scrollView.contentSize = imageView.bounds.size
-        self.scrollView.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
+        self.scrollView.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
         self.scrollView.delegate = self
         self.scrollView.addSubview(imageView)
         self.view.addSubview(scrollView)
@@ -55,12 +55,12 @@ class ViewController: UIViewController, UIScrollViewDelegate{
         scrollView.zoomScale = min(widthScale, heightScale)
     }
     
-    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView
     }
     
     // 縮放時讓圖片永遠置中
-    func scrollViewDidZoom(scrollView: UIScrollView) {
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
         let imageViewSize = imageView.frame.size
         let scrollViewSize = scrollView.bounds.size
         let verticalPadding = imageViewSize.height < scrollViewSize.height ? (scrollViewSize.height - imageViewSize.height) / 2 : 0
@@ -71,19 +71,19 @@ class ViewController: UIViewController, UIScrollViewDelegate{
     
     // 加入偵測點擊兩下事件
     func setupGestureRecognizer() {
-        let singleTap = UITapGestureRecognizer(target: self, action: "navigationToggle:")
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(navigationToggle(recognizer:)))
         singleTap.numberOfTapsRequired = 1
         scrollView.addGestureRecognizer(singleTap)
         
-        let doubleTap = UITapGestureRecognizer(target: self, action: "handleDoubleTap:")
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap(recognizer:)))
         doubleTap.numberOfTapsRequired = 2
         scrollView.addGestureRecognizer(doubleTap)
         
-        singleTap.requireGestureRecognizerToFail(doubleTap)
+        singleTap.require(toFail: doubleTap)
     }
     
     // 點擊兩下後 縮放圖片
-    func handleDoubleTap(recognizer: UITapGestureRecognizer) {
+    @objc func handleDoubleTap(recognizer: UITapGestureRecognizer) {
         if (scrollView.zoomScale > scrollView.minimumZoomScale) {
             scrollView.setZoomScale(scrollView.minimumZoomScale, animated: true)
         } else {
@@ -92,7 +92,7 @@ class ViewController: UIViewController, UIScrollViewDelegate{
     }
     
     // 點擊一下後 導覽列出現與消失
-    func navigationToggle(recognizer: UITapGestureRecognizer){
+    @objc func navigationToggle(recognizer: UITapGestureRecognizer){
         if self.navigationController?.navigationBar.alpha == 0.0{
             showNavigation()
         } else {
@@ -101,16 +101,16 @@ class ViewController: UIViewController, UIScrollViewDelegate{
     }
     
     func showNavigation(){
-        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
-        UIView.animateWithDuration(0.2, delay: 0.0, options: [], animations: { () -> Void in
+        UIApplication.shared.setStatusBarHidden(false, with: UIStatusBarAnimation.fade)
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: [], animations: { () -> Void in
             self.navigationController?.navigationBar.alpha = 1.0
             self.navigationController?.toolbar.alpha = 1.0
             }, completion: nil)
     }
     
     func hideNavigation(){
-        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Fade)
-        UIView.animateWithDuration(0.2, delay: 0.0, options: [], animations: { () -> Void in
+        UIApplication.shared.setStatusBarHidden(true, with: UIStatusBarAnimation.fade)
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: [], animations: { () -> Void in
             self.navigationController?.navigationBar.alpha = 0.0
             self.navigationController?.toolbar.alpha = 0.0
             }, completion: nil)
